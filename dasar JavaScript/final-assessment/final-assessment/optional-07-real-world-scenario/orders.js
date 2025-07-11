@@ -9,7 +9,7 @@ let orders = [];
 // TODO: selesaikan fungsi addOrder
 function addOrder(customerName, items) {
   let id = generateUniqueId();
-  let totalPrice = items.reduce((total, item) => total + item.price, 0);
+  let totalPrice = items.reduce((total, i) => total + i.price, 0);
   let status = "Menunggu";
 
   orders.push({
@@ -22,7 +22,7 @@ function addOrder(customerName, items) {
 }
 // TODO: selesaikan fungsi updateOrderStatus
 function updateOrderStatus(orderId, status) {
-  const find = orders.find((item) => orderId === item.id);
+  const find = orders.find((i) => orderId === i.id);
 
   if (find) {
     find.status = status;
@@ -31,7 +31,7 @@ function updateOrderStatus(orderId, status) {
 
 // TODO: selesaikan fungsi calculateTotalRevenue dari order yang berstatus Selesai
 function calculateTotalRevenue() {
-  return orders.reduce((total, order) => total + order.totalPrice, 0);
+  return orders.reduce((total, i) => total + i.totalPrice, 0);
 }
 
 // TODO: selesaikan fungsi deleteOrder

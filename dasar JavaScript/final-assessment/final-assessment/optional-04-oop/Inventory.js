@@ -19,7 +19,7 @@ class Inventory {
   }
 
   removeItem(id) {
-    this.items = this.items.filter(item => item.id !== id)
+    this.items = this.items.filter((i) => i.id !== id);
   }
 
   listItems() {
