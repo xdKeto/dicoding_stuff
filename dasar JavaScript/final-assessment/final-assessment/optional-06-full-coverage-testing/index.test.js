@@ -1,34 +1,35 @@
 import test from "node:test";
+import assert from "node:assert";
 import sum from "./index.js";
 
 test("test 1", () => {
-  console.log(sum(5, 4));
+  assert.strictEqual(sum(5, 4), 9);
 });
 
 test("test 2", () => {
-  console.log(sum(0, 0));
+  assert.strictEqual(sum(0, 0), 0);
 });
 
-test("test 3", () => {
-  console.log(sum('0', 3));
+test("test 3", () => {``
+  assert.strictEqual(sum("0", 3), 0);
 });
 
 test("test 4", () => {
-  console.log(sum(2, 'z'));
+  assert.strictEqual(sum(2, "z"), 0);
 });
 
 test("test 5", () => {
-  console.log(sum(2, -99));
+  assert.strictEqual(sum(2, -99), 0);
 });
 
 test("test 6", () => {
-  console.log(sum(-2, -99));
+  assert.strictEqual(sum(-2, -99), 0);
 });
 
 test("test 7", () => {
-  console.log(sum(null, 2));
+  assert.strictEqual(sum(null, 2), 0);
 });
 
 test("test 8", () => {
-  console.log(sum(null, null));
+  assert.strictEqual(sum(null, null), 0);
 });
