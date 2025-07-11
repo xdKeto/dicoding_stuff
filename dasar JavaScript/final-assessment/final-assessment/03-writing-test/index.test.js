@@ -1,10 +1,13 @@
 import { sum } from "./index.js";
 import test from "node:test";
-import assert from "node:test";
+import assert from "node:assert";
 
-test("test sum", () => {
-  console.log(sum(5, 4));
-  console.log(sum(2.8, 4.1));
-  console.log(sum(1, 999));
-  console.log(sum("2", 3));
+test("test 1", () => {
+  assert.strictEqual(sum(5, 4), 9);
+  assert.strictEqual(sum(1, 999), 1000);
+});
+
+test("test 2", () => {
+  assert.strictEqual(sum("2", 3), "23");
+  assert.strictEqual(sum(-1, 2), 1);
 });
